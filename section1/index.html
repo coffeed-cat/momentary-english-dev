@@ -44,10 +44,42 @@
         : "css/print/paper.css";
       document.getElementsByTagName("head")[0].appendChild(link);
     </script>
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .return-button-container {
+        position: absolute;
+        left: 2%;
+        top: 5%;
+        cursor: pointer;
+        z-index: 100;
+      }
+
+      .return-button {
+        color: white;
+
+        transition: linear 130ms;
+      }
+
+      .return-button:hover {
+        transition: linear 130ms;
+        transform: scale(1.1);
+        color: white;
+      }
+    </style>
   </head>
 
   <body>
     <div class="reveal">
+      <a href="../index.html" class="return-button-container"
+        ><i class="far fa-arrow-alt-circle-left return-button"></i
+      ></a>
       <div class="slides">
         <section>
           <h1>瞬間英作文</h1>
