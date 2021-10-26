@@ -44,7 +44,6 @@
 			left: 0;
 			bottom: 0;
 			background-color: orange;
-			width: 100%;
 			height: 2%;
 		}
 	</style>
@@ -514,12 +513,23 @@
 		$(document).ready(function(){
 			const inners = document.getElementsByClassName("inner");
 
-		for(let i of inners) {
+		for(let i in inners) {
+			const sectionNumber = +i+1;
+
 			const progressBarForInners = document.createElement('div');
 
 			progressBarForInners.classList.add('progress-bar');
 
-			i.appendChild(progressBarForInners);
+			progressBarForInners.classList.add(`section${sectionNumber}`);
+
+			inners[i].appendChild(progressBarForInners);
+
+			const sectionProgressInLocalStorage = localStorage.getItem(`section${sectionNumber}`);
+
+			if (sectionProgressInLocalStorage){
+				const progressPercentage = 100*sectionProgressInLocalStorage;
+				document.querySelector(`.section${sectionNumber}`).style.width = `${progressPercentage}%`;
+			}
 		}
 		});
 
